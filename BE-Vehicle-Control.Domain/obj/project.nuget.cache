@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "D4W02+jlAEn0SL3jHDCyxYMbzIOACbeYTNQ96fXcvHqPpCZiHTQz9pyT2+aFbz8rJy3Kdqrm6qKaheVpcZ4gXg==",
+  "success": true,
+  "projectFilePath": "/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Domain/BE-Vehicle-Control.Domain.csproj",
+  "expectedPackageFiles": [
+    "/Users/teonett/.nuget/packages/flunt/1.0.5/flunt.1.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,12 @@
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Shared/bin/Debug/net5.0/BE-Vehicle-Control.Shared.deps.json
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Shared/bin/Debug/net5.0/BE-Vehicle-Control.Shared.dll
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Shared/bin/Debug/net5.0/ref/BE-Vehicle-Control.Shared.dll
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Shared/bin/Debug/net5.0/BE-Vehicle-Control.Shared.pdb
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Shared/obj/Debug/net5.0/BE-Vehicle-Control.Shared.csprojAssemblyReference.cache
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Shared/obj/Debug/net5.0/BE-Vehicle-Control.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Shared/obj/Debug/net5.0/BE-Vehicle-Control.Shared.AssemblyInfoInputs.cache
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Shared/obj/Debug/net5.0/BE-Vehicle-Control.Shared.AssemblyInfo.cs
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Shared/obj/Debug/net5.0/BE-Vehicle-Control.Shared.csproj.CoreCompileInputs.cache
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Shared/obj/Debug/net5.0/BE-Vehicle-Control.Shared.dll
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Shared/obj/Debug/net5.0/ref/BE-Vehicle-Control.Shared.dll
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Shared/obj/Debug/net5.0/BE-Vehicle-Control.Shared.pdb
