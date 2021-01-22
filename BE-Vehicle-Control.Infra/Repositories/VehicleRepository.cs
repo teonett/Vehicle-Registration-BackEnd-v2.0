@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using BE_Vehicle_Control.Domain.Entities;
+using BE_Vehicle_Control.Infra.Contexts;
+using Microsoft.EntityFrameworkCore;
+
+namespace BE_Vehicle_Control.Infra.Repositories
+{
+    public class VehicleRepository
+    {
+        private readonly ApplicationContext _context;
+
+        public VehicleRepository(ApplicationContext context)
+        {
+            _context = context;
+        }
+
+        public IEnumerable<Vehicle> GetAll()
+        {
+            return _context.Vehicles.AsNoTracking();
+        }
+
+        public Brand GetById(Guid id)
+        {
+            return _context.Brands
+            .AsNoTracking()
+            .FirstOrDefault(x => x.Id == id);
+        }
+
+        public void Add(Vehicle entity)
+        {
+            _context.Vehicles.Add(entity);
+            _context.SaveChanges();
+        }
+
+        public void Update(Vehicle entity)
+        {
+            _context.Entry(entity).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+        public void Remove(Vehicle entity)
+        {
+            _context.Vehicles.Remove(entity);
+            _context.SaveChanges();
+        }
+    }
+}
