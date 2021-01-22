@@ -9,12 +9,15 @@ namespace BE_Vehicle_Control.Domain.Commands
     public class UpdateVehicleModelCommand : Notifiable, ICommand
     {
 
-        public UpdateVehicleModelCommand(string description, EnumTypeVehicle typeVehicle, Guid brandId)
+        public UpdateVehicleModelCommand(Guid id, string description, EnumTypeVehicle typeVehicle, Guid brandId)
         {
+            Id = id;
             Description = description;
             TypeVehicle = typeVehicle;
             BrandId = brandId;
         }
+
+        public Guid Id { get; set; }
 
         public string Description { get; set; }
 

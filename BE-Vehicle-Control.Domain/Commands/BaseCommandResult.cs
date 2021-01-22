@@ -7,7 +7,7 @@ namespace BE_Vehicle_Control.Domain.Commands
         public BaseCommandResult()
         {
         }
-
+        
         public BaseCommandResult(bool success, string message, object data)
         {
             Success = success;

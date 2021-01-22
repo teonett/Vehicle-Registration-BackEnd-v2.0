@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BE_Vehicle_Control.Domain.Entities;
+using BE_Vehicle_Control.Domain.Repositories;
 using BE_Vehicle_Control.Infra.Contexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace BE_Vehicle_Control.Infra.Repositories
 {
-    public class VehicleRepository
+    public class VehicleRepository : IVehicleRepository
     {
         private readonly ApplicationContext _context;
 
@@ -21,9 +22,9 @@ namespace BE_Vehicle_Control.Infra.Repositories
             return _context.Vehicles.AsNoTracking();
         }
 
-        public Brand GetById(Guid id)
+        public Vehicle GetById(Guid id)
         {
-            return _context.Brands
+            return _context.Vehicles
             .AsNoTracking()
             .FirstOrDefault(x => x.Id == id);
         }
@@ -44,5 +45,6 @@ namespace BE_Vehicle_Control.Infra.Repositories
             _context.Vehicles.Remove(entity);
             _context.SaveChanges();
         }
+
     }
 }

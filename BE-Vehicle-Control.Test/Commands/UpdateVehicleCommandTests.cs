@@ -10,7 +10,7 @@ namespace BE_Vehicle_Control.Test.Commands
         [TestMethod]
         public void  WhenTryIncludeNewCategoryInvalid()
         {
-            var command = new UpdateVehicleCommand("", 1900, 1900, Guid.NewGuid());
+            var command = new UpdateVehicleCommand(Guid.NewGuid(), "", 1900, 1900, Guid.NewGuid());
             command.Validate();
 
             Assert.AreEqual(command.Valid, false);
@@ -19,7 +19,7 @@ namespace BE_Vehicle_Control.Test.Commands
         [TestMethod]
         public void  WhenTryIncludeNewCategoryValid()
         {
-            var command = new UpdateVehicleCommand("ZZZ", DateTime.Now.Year, DateTime.Now.Year, Guid.NewGuid());
+            var command = new UpdateVehicleCommand(Guid.NewGuid(), "ZZZ", DateTime.Now.Year, DateTime.Now.Year, Guid.NewGuid());
             command.Validate();
 
             Assert.AreEqual(command.Valid, true);

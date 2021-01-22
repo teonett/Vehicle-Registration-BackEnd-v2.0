@@ -12,14 +12,15 @@ namespace BE_Vehicle_Control.Domain.Commands
             
         }
 
-        public UpdateVehicleCommand(string description, int yearBuild, int yearModel, Guid vehicleModelId)
+        public UpdateVehicleCommand(Guid id, string description, int yearBuild, int yearModel, Guid vehicleModelId)
         {
+            Id = id;
             Description = description;
             YearBuild = yearBuild;
             YearModel = yearModel;
             VehicleModelId = vehicleModelId;
         }
-
+        public Guid Id { get; set; }
         public string Description { get; set; }
         public int YearBuild { get; set; }
         public int YearModel { get; set; }

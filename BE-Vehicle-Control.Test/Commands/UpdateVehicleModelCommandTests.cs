@@ -11,7 +11,7 @@ namespace BE_Vehicle_Control.Test.Commands
         [TestMethod]
         public void  WhenTryIncludeNewCategoryInvalid()
         {
-            var command = new UpdateVehicleModelCommand("",EnumTypeVehicle.Truck, Guid.NewGuid());
+            var command = new UpdateVehicleModelCommand(Guid.NewGuid(), "",EnumTypeVehicle.Truck, Guid.NewGuid());
             command.Validate();
 
             Assert.AreEqual(command.Valid, false);
@@ -20,7 +20,7 @@ namespace BE_Vehicle_Control.Test.Commands
         [TestMethod]
         public void  WhenTryIncludeNewCategoryValid()
         {
-            var command = new UpdateVehicleModelCommand("ZZZ",EnumTypeVehicle.Truck, Guid.NewGuid());
+            var command = new UpdateVehicleModelCommand(Guid.NewGuid(), "ZZZ",EnumTypeVehicle.Truck, Guid.NewGuid());
             command.Validate();
 
             Assert.AreEqual(command.Valid, true);

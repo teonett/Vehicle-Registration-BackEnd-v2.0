@@ -1,15 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using BE_Vehicle_Control.Domain.Handlers;
+using BE_Vehicle_Control.Domain.Repositories;
+using BE_Vehicle_Control.Infra.Contexts;
+using BE_Vehicle_Control.Infra.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace BE_Vehicle_Control.Api
@@ -23,18 +21,30 @@ namespace BE_Vehicle_Control.Api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
 
             services.AddControllers();
+
+            // services.AddDbContext<ApplicationContext>(opt => opt.UseInMemoryDatabase("Database"));
+            string connectionString = "Data Source=vehiclecontrol.db";
+            services.AddDbContext<ApplicationContext>(opt => opt.UseSqlite(connectionString));
+
+            services.AddTransient<IBrandRepository, BrandRepository>();
+            services.AddTransient<BrandHandler, BrandHandler>();
+
+            services.AddTransient<IVehicleModelRepository, VehicleModelRepository>();
+            services.AddTransient<VehicleModelHandler, VehicleModelHandler>();
+
+            services.AddTransient<IVehicleRepository, VehicleRepository>();
+            services.AddTransient<VehicleHandler, VehicleHandler>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BE_Vehicle_Control.Api", Version = "v1" });
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -47,6 +57,11 @@ namespace BE_Vehicle_Control.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             app.UseAuthorization();
 

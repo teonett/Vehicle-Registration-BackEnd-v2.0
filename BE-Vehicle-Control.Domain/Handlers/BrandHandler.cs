@@ -10,7 +10,8 @@ namespace BE_Vehicle_Control.Domain.Handlers
     public class BrandHandler :
         Notifiable,
         IHandler<CreateBrandCommand>,
-        IHandler<UpdateBrandCommand>
+        IHandler<UpdateBrandCommand>,
+        IHandler<RemoveBrandCommand>
     {
         private readonly IBrandRepository _repository;
 
@@ -54,10 +55,29 @@ namespace BE_Vehicle_Control.Domain.Handlers
                 );
             }
 
-            var brand = new Brand(command.Description);
+            var brand = _repository.GetById(command.Id);
+            brand.UpdateDescription(command.Description);
             _repository.Update(brand);
 
             return new BaseCommandResult(true, "Saved successfully.", brand);
+        }
+
+        public ICommandResult Handle(RemoveBrandCommand command)
+        {
+            var brand = _repository.GetById(command.Id);
+
+            if (brand == null)
+            {
+                return new BaseCommandResult(
+                    false, 
+                    "Whoops, looks like something went wrong.",
+                    command.Notifications
+                );
+            }
+
+            _repository.Remove(brand);
+
+            return new BaseCommandResult(true, "Removed successfully.", brand);
         }
     }
 }

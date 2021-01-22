@@ -1,3 +1,4 @@
+using System;
 using BE_Vehicle_Control.Shared.Commands.Contracts;
 using Flunt.Notifications;
 using Flunt.Validations;
@@ -6,11 +7,18 @@ namespace BE_Vehicle_Control.Domain.Commands
 {
     public class UpdateBrandCommand : Notifiable, ICommand
     {
-        public UpdateBrandCommand(string description)
+        public UpdateBrandCommand()
         {
-            Description = description;
+            
         }
 
+        public UpdateBrandCommand(Guid id, string description)
+        {
+            Id = id;
+            Description = description;
+        }
+        
+        public Guid Id { get; set; }
         public string Description { get; set; }
 
         public void Validate()

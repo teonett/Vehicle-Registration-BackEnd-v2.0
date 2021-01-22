@@ -10,7 +10,8 @@ namespace BE_Vehicle_Control.Domain.Handlers
     public class VehicleHandler :
         Notifiable,
         IHandler<CreateVehicleCommand>,
-        IHandler<UpdateVehicleCommand>
+        IHandler<UpdateVehicleCommand>,
+        IHandler<RemoveVehicleCommand>
     {
 
         private readonly IVehicleRepository _repository;
@@ -50,10 +51,29 @@ namespace BE_Vehicle_Control.Domain.Handlers
                 );
             }
 
-            var vehicle = new Vehicle(command.Description, command.YearBuild, command.YearModel, command.VehicleModelId);
+            var vehicle = _repository.GetById(command.Id);
+            vehicle.UpdateDescription(command.Description,command.YearBuild, command.YearModel, command.VehicleModelId);
             _repository.Update(vehicle);
 
             return new BaseCommandResult(true, "Saved successfully.", vehicle);
+        }
+
+        public ICommandResult Handle(RemoveVehicleCommand command)
+        {
+            var vehicle = _repository.GetById(command.Id);
+
+            if (vehicle == null)
+            {
+                return new BaseCommandResult(
+                    false, 
+                    "Whoops, looks like something went wrong.",
+                    command.Notifications
+                );
+            }
+
+            _repository.Remove(vehicle);
+
+            return new BaseCommandResult(true, "Removed successfully.", vehicle);
         }
     }
 }

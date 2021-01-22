@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BE_Vehicle_Control.Domain.Entities;
+using BE_Vehicle_Control.Domain.Repositories;
 using BE_Vehicle_Control.Infra.Contexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace BE_Vehicle_Control.Infra.Repositories
 {
-    public class VehicleModelRepository
+    public class VehicleModelRepository : IVehicleModelRepository
     {
         private readonly ApplicationContext _context;
 

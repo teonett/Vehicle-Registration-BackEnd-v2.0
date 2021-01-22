@@ -1,3 +1,4 @@
+using System;
 using BE_Vehicle_Control.Domain.Commands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -9,7 +10,7 @@ namespace BE_Vehicle_Control.Test.Commands
         [TestMethod]
         public void  WhenTryIncludeNewCategoryInvalid()
         {
-            var command = new UpdateBrandCommand("");
+            var command = new UpdateBrandCommand(Guid.NewGuid(), "");
             command.Validate();
 
             Assert.AreEqual(command.Valid, false);
@@ -18,7 +19,7 @@ namespace BE_Vehicle_Control.Test.Commands
         [TestMethod]
         public void  WhenTryIncludeNewCategoryValid()
         {
-            var command = new UpdateBrandCommand("ZZZ");
+            var command = new UpdateBrandCommand(Guid.NewGuid(), "ZZZ");
             command.Validate();
 
             Assert.AreEqual(command.Valid, true);
