@@ -27,7 +27,7 @@ namespace BE_Vehicle_Control.Test.Mocks
         {
             
         }
-        public void Remove(Brand entity)
+        public void Remove(Guid id)
         {
             
         }

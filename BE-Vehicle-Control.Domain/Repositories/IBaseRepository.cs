@@ -9,6 +9,6 @@ namespace BE_Vehicle_Control.Domain.Repositories
          TEntity GetById(Guid id);
          void Add(TEntity entity);
          void Update(TEntity entity);
-          void Remove(TEntity entity);
+          void Remove(Guid id);
     }
 }

@@ -75,7 +75,7 @@ namespace BE_Vehicle_Control.Domain.Handlers
                 );
             }
 
-            _repository.Remove(brand);
+            _repository.Remove(command.Id);
 
             return new BaseCommandResult(true, "Removed successfully.", brand);
         }

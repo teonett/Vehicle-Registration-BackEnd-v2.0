@@ -22,7 +22,9 @@ namespace BE_Vehicle_Control.Api.Controllers
 
         [HttpGet]
         [Route("{Id:Guid}")]
-        public Brand GetById(Guid Id, [FromServices] IBrandRepository repository)
+        public Brand GetById(
+            Guid Id, 
+            [FromServices] IBrandRepository repository)
         {
             return repository.GetById(Id);
         }
@@ -49,12 +51,11 @@ namespace BE_Vehicle_Control.Api.Controllers
 
         [HttpDelete]
         [Route("{Id:Guid}")]
-        public BaseCommandResult Remove(
-            [FromBody]RemoveBrandCommand command,
-            [FromServices]BrandHandler handler
-        )
+        public void Remove(
+            Guid Id, 
+            [FromServices] IBrandRepository repository)
         {
-            return (BaseCommandResult)handler.Handle(command);
+            repository.Remove(Id);
         }
     }
 }

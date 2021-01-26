@@ -40,9 +40,11 @@ namespace BE_Vehicle_Control.Infra.Repositories
             _context.Entry(entity).State = EntityState.Modified;
             _context.SaveChanges();
         }
-        public void Remove(Brand entity)
+
+        public void Remove(Guid id)
         {
-            _context.Brands.Remove(entity);
+            var brand = _context.Brands.AsNoTracking().FirstOrDefault(x => x.Id == id);
+            _context.Brands.Remove(brand);
             _context.SaveChanges();
         }
     }
