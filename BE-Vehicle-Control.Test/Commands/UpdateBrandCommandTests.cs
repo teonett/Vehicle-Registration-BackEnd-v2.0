@@ -8,7 +8,7 @@ namespace BE_Vehicle_Control.Test.Commands
     public class UpdateBrandCommandTests
     {
         [TestMethod]
-        public void  WhenTryIncludeNewCategoryInvalid()
+        public void  WhenTryIncludeNewBrandInvalid()
         {
             var command = new UpdateBrandCommand(Guid.NewGuid(), "");
             command.Validate();
@@ -17,7 +17,7 @@ namespace BE_Vehicle_Control.Test.Commands
         }
 
         [TestMethod]
-        public void  WhenTryIncludeNewCategoryValid()
+        public void  WhenTryIncludeNewBrandValid()
         {
             var command = new UpdateBrandCommand(Guid.NewGuid(), "ZZZ");
             command.Validate();

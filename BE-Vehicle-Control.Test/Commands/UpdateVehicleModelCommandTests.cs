@@ -1,6 +1,5 @@
 using System;
 using BE_Vehicle_Control.Domain.Commands;
-using BE_Vehicle_Control.Domain.Enums;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BE_Vehicle_Control.Test.Commands
@@ -9,18 +8,18 @@ namespace BE_Vehicle_Control.Test.Commands
     public class UpdateVehicleModelCommandTests
     {
         [TestMethod]
-        public void  WhenTryIncludeNewCategoryInvalid()
+        public void  WhenTryIncludeNewVehicleModelInvalid()
         {
-            var command = new UpdateVehicleModelCommand(Guid.NewGuid(), "",EnumTypeVehicle.Truck, Guid.NewGuid());
+            var command = new UpdateVehicleModelCommand(Guid.NewGuid(), "", Guid.NewGuid(), Guid.NewGuid());
             command.Validate();
 
             Assert.AreEqual(command.Valid, false);
         }
 
         [TestMethod]
-        public void  WhenTryIncludeNewCategoryValid()
+        public void  WhenTryIncludeNewVehicleModelValid()
         {
-            var command = new UpdateVehicleModelCommand(Guid.NewGuid(), "ZZZ",EnumTypeVehicle.Truck, Guid.NewGuid());
+            var command = new UpdateVehicleModelCommand(Guid.NewGuid(), "ZZZ", Guid.NewGuid(), Guid.NewGuid());
             command.Validate();
 
             Assert.AreEqual(command.Valid, true);

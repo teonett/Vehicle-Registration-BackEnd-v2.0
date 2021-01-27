@@ -1,5 +1,4 @@
 using System;
-using BE_Vehicle_Control.Domain.Enums;
 using BE_Vehicle_Control.Shared.Commands.Contracts;
 using Flunt.Notifications;
 using Flunt.Validations;
@@ -9,16 +8,16 @@ namespace BE_Vehicle_Control.Domain.Commands
     public class CreateVehicleModelCommand : Notifiable, ICommand
     {
 
-        public CreateVehicleModelCommand(string description, EnumTypeVehicle typeVehicle, Guid brandId)
+        public CreateVehicleModelCommand(string description, Guid typeVehicleId, Guid brandId)
         {
             Description = description;
-            TypeVehicle = typeVehicle;
+            TypeVehicleId = typeVehicleId;
             BrandId = brandId;
         }
 
         public string Description { get; set; }
 
-        public EnumTypeVehicle TypeVehicle { get; set; }
+        public Guid TypeVehicleId { get; set; }
         
         public Guid BrandId { get; set; }
         

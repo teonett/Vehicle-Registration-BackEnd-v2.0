@@ -8,7 +8,7 @@ namespace BE_Vehicle_Control.Test.Commands
     public class CreateVehicleCommandTests
     {
         [TestMethod]
-        public void  WhenTryIncludeNewCategoryInvalid()
+        public void  WhenTryIncludeNewVehicleInvalid()
         {
             var command = new CreateVehicleCommand("", 1900, 1900, Guid.NewGuid());
             command.Validate();
@@ -17,7 +17,7 @@ namespace BE_Vehicle_Control.Test.Commands
         }
 
         [TestMethod]
-        public void  WhenTryIncludeNewCategoryValid()
+        public void  WhenTryIncludeNewVehicleValid()
         {
             var command = new CreateVehicleCommand("ZZZ", DateTime.Now.Year, DateTime.Now.Year, Guid.NewGuid());
             command.Validate();

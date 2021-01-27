@@ -7,20 +7,25 @@ using Flunt.Notifications;
 
 namespace BE_Vehicle_Control.Domain.Handlers
 {
-    public class VehicleModelHandler :
+    public class VehicleTypeHandler :
         Notifiable,
-        IHandler<CreateVehicleModelCommand>,
-        IHandler<UpdateVehicleModelCommand>,
-        IHandler<RemoveVehicleModelCommand>
+        IHandler<CreateVehicleTypeCommand>,
+        IHandler<UpdateVehicleTypeCommand>,
+        IHandler<RemoveVehicleTypeCommand>
     {
-        private readonly IVehicleModelRepository _repository;
+        private readonly IVehicleTypeRepository _repository;
 
-        public VehicleModelHandler(IVehicleModelRepository repository)
+        public VehicleTypeHandler()
+        {
+            
+        }
+
+        public VehicleTypeHandler(IVehicleTypeRepository repository)
         {
             _repository = repository;
         }
 
-        public ICommandResult Handle(CreateVehicleModelCommand command)
+        public ICommandResult Handle(CreateVehicleTypeCommand command)
         {
             command.Validate();
             if (!command.Valid)
@@ -32,13 +37,13 @@ namespace BE_Vehicle_Control.Domain.Handlers
                 );
             }
 
-            var model = new VehicleModel(command.Description, command.TypeVehicleId, command.BrandId);
-            _repository.Add(model);
+            var vehicleType = new VehicleType(command.Description);
+            _repository.Add(vehicleType);
 
-            return new BaseCommandResult(true, "Saved successfully.", model);
+            return new BaseCommandResult(true, "Saved successfully.", vehicleType);
         }
 
-        public ICommandResult Handle(UpdateVehicleModelCommand command)
+        public ICommandResult Handle(UpdateVehicleTypeCommand command)
         {
             command.Validate();
             if (!command.Valid)
@@ -50,17 +55,18 @@ namespace BE_Vehicle_Control.Domain.Handlers
                 );
             }
 
-            var model = _repository.GetById(command.Id);
-            model.UpdateDescription(command.Description, command.TypeVehicleId, command.BrandId);
-            _repository.Update(model);
+            var vehicleType = _repository.GetById(command.Id);
+            vehicleType.UpdateDescription(command.Description);
+            _repository.Update(vehicleType);
 
-            return new BaseCommandResult(true, "Saved successfully.", model);
+            return new BaseCommandResult(true, "Saved successfully.", vehicleType);
         }
 
-        public ICommandResult Handle(RemoveVehicleModelCommand command)
-        {   
-            var model = _repository.GetById(command.Id);
-            if (model == null)
+        public ICommandResult Handle(RemoveVehicleTypeCommand command)
+        {
+            var brand = _repository.GetById(command.Id);
+
+            if (brand == null)
             {
                 return new BaseCommandResult(
                     false, 
@@ -71,7 +77,7 @@ namespace BE_Vehicle_Control.Domain.Handlers
 
             _repository.Remove(command.Id);
 
-            return new BaseCommandResult(true, "Removed successfully.", model);
+            return new BaseCommandResult(true, "Removed successfully.", brand);
         }
     }
 }

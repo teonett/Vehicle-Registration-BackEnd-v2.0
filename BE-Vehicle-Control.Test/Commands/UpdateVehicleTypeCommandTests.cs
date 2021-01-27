@@ -5,21 +5,21 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace BE_Vehicle_Control.Test.Commands
 {
     [TestClass]
-    public class CreateVehicleModelCommandTests
+    public class UpdateVehicleTypeCommandTests
     {
         [TestMethod]
-        public void  WhenTryIncludeNewVehicleModelInvalid()
+        public void  WhenTryIncludeNewVehicleTypeInvalid()
         {
-            var command = new CreateVehicleModelCommand("", Guid.NewGuid(), Guid.NewGuid());
+            var command = new UpdateVehicleTypeCommand(Guid.NewGuid(), "");
             command.Validate();
 
             Assert.AreEqual(command.Valid, false);
         }
 
         [TestMethod]
-        public void  WhenTryIncludeNewVehicleModelValid()
+        public void  WhenTryIncludeNewVehicleTypeValid()
         {
-            var command = new CreateVehicleModelCommand("ZZZ", Guid.NewGuid(), Guid.NewGuid());
+            var command = new UpdateVehicleTypeCommand(Guid.NewGuid(), "CAR");
             command.Validate();
 
             Assert.AreEqual(command.Valid, true);

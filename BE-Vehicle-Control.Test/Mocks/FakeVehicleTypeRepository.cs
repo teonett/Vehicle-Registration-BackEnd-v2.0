@@ -5,31 +5,32 @@ using BE_Vehicle_Control.Domain.Repositories;
 
 namespace BE_Vehicle_Control.Test.Mocks
 {
-    public class FakeVehicleModelRepository : IVehicleModelRepository
+    public class FakeVehicleTypeRepository : IVehicleTypeRepository
     {
-        public IEnumerable<VehicleModel> GetAll()
+        
+        public IEnumerable<VehicleType> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public VehicleModel GetById(Guid id)
+        public VehicleType GetById(Guid id)
         {
-            return new VehicleModel("ZZZ", Guid.NewGuid(), Guid.NewGuid());
+            return new VehicleType("ZZZ");
         }
 
-        public void Add(VehicleModel entity)
+        public void Add(VehicleType entity)
         {
             
         }
 
-        public void Update(VehicleModel entity)
+        public void Update(VehicleType entity)
         {
             
         }
+
         public void Remove(Guid id)
         {
             
         }
-
     }
 }
