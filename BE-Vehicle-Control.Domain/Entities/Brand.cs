@@ -15,7 +15,7 @@ namespace BE_Vehicle_Control.Domain.Entities
 
         public Brand(string description)
         {
-            Description = description;
+            Description = description.Trim().ToUpper();
             LastUpdateDate = DateTime.Now;
         }
 
@@ -28,7 +28,7 @@ namespace BE_Vehicle_Control.Domain.Entities
         
         public void UpdateDescription(string description)
         {
-            Description = description.ToUpper().Trim();
+            Description = description.Trim().ToUpper();
             LastUpdateDate = DateTime.Now;
         }
     }

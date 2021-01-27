@@ -9,22 +9,22 @@ using Microsoft.AspNetCore.Mvc;
 namespace BE_Vehicle_Control.Api.Controllers
 {
     [ApiController]
-    [Route("v1/brand")]
-
-    public class BrandConroller : ControllerBase
+    [Route("v1/model")]
+    public class ModelController : ControllerBase
     {
         [HttpGet]
         [Route("")]
-        public IEnumerable<Brand> GetAll([FromServices] IBrandRepository repository)
+        public IEnumerable<VehicleModel> GetAll(
+            [FromServices] IVehicleModelRepository repository)
         {
             return repository.GetAll();
         }
 
         [HttpGet]
         [Route("{Id:Guid}")]
-        public Brand GetById(
+        public VehicleModel GetById(
             Guid Id, 
-            [FromServices] IBrandRepository repository)
+            [FromServices] IVehicleModelRepository repository)
         {
             return repository.GetById(Id);
         }
@@ -32,8 +32,8 @@ namespace BE_Vehicle_Control.Api.Controllers
         [Route("")]
         [HttpPost]
         public BaseCommandResult Create(
-            [FromBody]CreateBrandCommand command,
-            [FromServices]BrandHandler handler
+            [FromBody]CreateVehicleModelCommand command,
+            [FromServices]VehicleModelHandler handler
         )
         {
             return (BaseCommandResult)handler.Handle(command);
@@ -42,8 +42,8 @@ namespace BE_Vehicle_Control.Api.Controllers
         [HttpPut]
         [Route("")]
         public BaseCommandResult Update(
-            [FromBody]UpdateBrandCommand command,
-            [FromServices]BrandHandler handler
+            [FromBody]UpdateVehicleModelCommand command,
+            [FromServices]VehicleModelHandler handler
         )
         {
             return (BaseCommandResult)handler.Handle(command);
@@ -53,7 +53,7 @@ namespace BE_Vehicle_Control.Api.Controllers
         [Route("{Id:Guid}")]
         public void Remove(
             Guid Id, 
-            [FromServices] IBrandRepository repository)
+            [FromServices] IVehicleModelRepository repository)
         {
             repository.Remove(Id);
         }
