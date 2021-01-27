@@ -26,8 +26,8 @@ namespace BE_Vehicle_Control.Domain.Commands
             AddNotifications(
                 new Contract()
                 .Requires()
-                .HasMinLen(Description, 2, "Description", "The Brand field must contain between 2 and 20 characters.")
-                .HasMaxLen(Description, 20, "Description", "The Brand field must contain between 2 and 20 characters.")                
+                .HasMinLen(Description, 2, "Description", "The Type field must contain between 2 and 20 characters.")
+                .HasMaxLen(Description, 20, "Description", "The Type field must contain between 2 and 20 characters.")                
             );
         }
     }

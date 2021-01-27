@@ -32,8 +32,8 @@ namespace BE_Vehicle_Control.Api.Controllers
         [Route("")]
         [HttpPost]
         public BaseCommandResult Create(
-            [FromBody]CreateBrandCommand command,
-            [FromServices]BrandHandler handler
+            [FromBody]CreateVehicleTypeCommand command,
+            [FromServices]VehicleTypeHandler handler
         )
         {
             return (BaseCommandResult)handler.Handle(command);

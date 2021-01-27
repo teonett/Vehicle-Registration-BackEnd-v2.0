@@ -36,6 +36,9 @@ namespace BE_Vehicle_Control.Api
             services.AddTransient<IVehicleModelRepository, VehicleModelRepository>();
             services.AddTransient<VehicleModelHandler, VehicleModelHandler>();
 
+            services.AddTransient<IVehicleTypeRepository, VehicleTypeRepository>();
+            services.AddTransient<VehicleTypeHandler, VehicleTypeHandler>();
+
             services.AddTransient<IVehicleRepository, VehicleRepository>();
             services.AddTransient<VehicleHandler, VehicleHandler>();
 

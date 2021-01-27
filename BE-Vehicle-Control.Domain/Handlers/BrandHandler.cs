@@ -40,7 +40,7 @@ namespace BE_Vehicle_Control.Domain.Handlers
             var brand = new Brand(command.Description);
             _repository.Add(brand);
 
-            return new BaseCommandResult(true, "Saved successfully.", brand);
+            return new BaseCommandResult(true, "Brand saved successfully.", brand);
         }
 
         public ICommandResult Handle(UpdateBrandCommand command)
@@ -59,7 +59,7 @@ namespace BE_Vehicle_Control.Domain.Handlers
             brand.UpdateDescription(command.Description);
             _repository.Update(brand);
 
-            return new BaseCommandResult(true, "Saved successfully.", brand);
+            return new BaseCommandResult(true, "Brand updated successfully.", brand);
         }
 
         public ICommandResult Handle(RemoveBrandCommand command)
@@ -77,7 +77,7 @@ namespace BE_Vehicle_Control.Domain.Handlers
 
             _repository.Remove(command.Id);
 
-            return new BaseCommandResult(true, "Removed successfully.", brand);
+            return new BaseCommandResult(true, "Brand removed successfully.", brand);
         }
     }
 }

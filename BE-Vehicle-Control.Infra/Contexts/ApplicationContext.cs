@@ -15,6 +15,8 @@ namespace BE_Vehicle_Control.Infra.Contexts
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<VehicleModel> VehicleModels { get; set; }
 
+        public DbSet<VehicleType> VehicleTypes { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Brand>().ToTable("Brand");
@@ -25,6 +27,9 @@ namespace BE_Vehicle_Control.Infra.Contexts
 
             modelBuilder.Entity<VehicleModel>().ToTable("VehicleModel");
             modelBuilder.Entity<VehicleModel>().HasKey(x => x.Id);
+
+            modelBuilder.Entity<VehicleType>().ToTable("VehicleType");
+            modelBuilder.Entity<VehicleType>().HasKey(x => x.Id);
 
             base.OnModelCreating(modelBuilder);
         }

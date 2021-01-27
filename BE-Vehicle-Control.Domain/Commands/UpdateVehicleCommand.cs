@@ -31,8 +31,8 @@ namespace BE_Vehicle_Control.Domain.Commands
             AddNotifications(
                 new Contract()
                 .Requires()
-                .HasMinLen(Description, 2, "Description", "The Category field must contain between 2 and 20 characters.")
-                .HasMaxLen(Description, 20, "Description", "The Category field must contain between 2 and 20 characters.")
+                .HasMinLen(Description, 2, "Description", "The Vehicle field must contain between 2 and 20 characters.")
+                .HasMaxLen(Description, 20, "Description", "The Vehicle field must contain between 2 and 20 characters.")
             );
         }
     }

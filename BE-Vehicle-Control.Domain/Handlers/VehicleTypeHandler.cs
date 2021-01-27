@@ -40,7 +40,7 @@ namespace BE_Vehicle_Control.Domain.Handlers
             var vehicleType = new VehicleType(command.Description);
             _repository.Add(vehicleType);
 
-            return new BaseCommandResult(true, "Saved successfully.", vehicleType);
+            return new BaseCommandResult(true, "Type saved successfully.", vehicleType);
         }
 
         public ICommandResult Handle(UpdateVehicleTypeCommand command)
@@ -59,7 +59,7 @@ namespace BE_Vehicle_Control.Domain.Handlers
             vehicleType.UpdateDescription(command.Description);
             _repository.Update(vehicleType);
 
-            return new BaseCommandResult(true, "Saved successfully.", vehicleType);
+            return new BaseCommandResult(true, "Type updated successfully.", vehicleType);
         }
 
         public ICommandResult Handle(RemoveVehicleTypeCommand command)
@@ -77,7 +77,7 @@ namespace BE_Vehicle_Control.Domain.Handlers
 
             _repository.Remove(command.Id);
 
-            return new BaseCommandResult(true, "Removed successfully.", brand);
+            return new BaseCommandResult(true, "Type removed successfully.", brand);
         }
     }
 }

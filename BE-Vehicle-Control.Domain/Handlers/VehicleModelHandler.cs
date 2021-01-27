@@ -35,7 +35,7 @@ namespace BE_Vehicle_Control.Domain.Handlers
             var model = new VehicleModel(command.Description, command.TypeVehicleId, command.BrandId);
             _repository.Add(model);
 
-            return new BaseCommandResult(true, "Saved successfully.", model);
+            return new BaseCommandResult(true, "Model saved successfully.", model);
         }
 
         public ICommandResult Handle(UpdateVehicleModelCommand command)
@@ -54,7 +54,7 @@ namespace BE_Vehicle_Control.Domain.Handlers
             model.UpdateDescription(command.Description, command.TypeVehicleId, command.BrandId);
             _repository.Update(model);
 
-            return new BaseCommandResult(true, "Saved successfully.", model);
+            return new BaseCommandResult(true, "Model updated successfully.", model);
         }
 
         public ICommandResult Handle(RemoveVehicleModelCommand command)
@@ -71,7 +71,7 @@ namespace BE_Vehicle_Control.Domain.Handlers
 
             _repository.Remove(command.Id);
 
-            return new BaseCommandResult(true, "Removed successfully.", model);
+            return new BaseCommandResult(true, "Model removed successfully.", model);
         }
     }
 }

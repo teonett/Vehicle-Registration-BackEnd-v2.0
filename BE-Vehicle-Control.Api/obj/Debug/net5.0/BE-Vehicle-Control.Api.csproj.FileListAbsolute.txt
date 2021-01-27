@@ -1,10 +1,3 @@
-/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.csprojAssemblyReference.cache
-/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.GeneratedMSBuildEditorConfig.editorconfig
-/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.AssemblyInfoInputs.cache
-/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.AssemblyInfo.cs
-/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.csproj.CoreCompileInputs.cache
-/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.MvcApplicationPartsAssemblyInfo.cs
-/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.MvcApplicationPartsAssemblyInfo.cache
 /Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/bin/Debug/net5.0/appsettings.Development.json
 /Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/bin/Debug/net5.0/appsettings.json
 /Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/bin/Debug/net5.0/BE-Vehicle-Control.Api.deps.json
@@ -61,6 +54,13 @@
 /Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/bin/Debug/net5.0/BE-Vehicle-Control.Domain.pdb
 /Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/bin/Debug/net5.0/BE-Vehicle-Control.Shared.pdb
 /Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/bin/Debug/net5.0/BE-Vehicle-Control.Infra.pdb
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.csprojAssemblyReference.cache
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.GeneratedMSBuildEditorConfig.editorconfig
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.AssemblyInfoInputs.cache
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.AssemblyInfo.cs
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.csproj.CoreCompileInputs.cache
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.MvcApplicationPartsAssemblyInfo.cs
+/Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/BE-Vehicle-Control.Api.MvcApplicationPartsAssemblyInfo.cache
 /Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/staticwebassets/BE-Vehicle-Control.Api.StaticWebAssets.Manifest.cache
 /Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/staticwebassets/BE-Vehicle-Control.Api.StaticWebAssets.xml
 /Users/teonett/Documents/Projects/PublishGH/BE-Vehicle-Control/BE-Vehicle-Control.Api/obj/Debug/net5.0/scopedcss/bundle/BE-Vehicle-Control.Api.styles.css
