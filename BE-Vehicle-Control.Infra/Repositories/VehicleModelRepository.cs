@@ -21,6 +21,7 @@ namespace BE_Vehicle_Control.Infra.Repositories
         {
             var vehicleModels = _context.VehicleModels
                                 .Include(x => x.Brand)
+                                .Include(x => x.TypeVehicle)
                                 .AsNoTracking()
                                 .ToList();
 
@@ -31,6 +32,7 @@ namespace BE_Vehicle_Control.Infra.Repositories
         {
             return _context.VehicleModels
             .Include(x => x.Brand)
+            .Include(x => x.TypeVehicle)
             .AsNoTracking()
             .FirstOrDefault(x => x.Id == id);
         }

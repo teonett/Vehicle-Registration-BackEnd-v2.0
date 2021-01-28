@@ -19,12 +19,23 @@ namespace BE_Vehicle_Control.Infra.Repositories
 
         public IEnumerable<Vehicle> GetAll()
         {
-            return _context.Vehicles.AsNoTracking();
+            return _context
+            .Vehicles
+            .Include(x => x.VehicleModel)
+                .ThenInclude(x => x.Brand)
+            .Include(x => x.VehicleModel)
+                .ThenInclude(x => x.TypeVehicle)
+            .AsNoTracking();
         }
 
         public Vehicle GetById(Guid id)
         {
-            return _context.Vehicles
+            return _context
+            .Vehicles
+            .Include(x => x.VehicleModel)
+                .ThenInclude(x => x.Brand)
+            .Include(x => x.VehicleModel)
+                .ThenInclude(x => x.TypeVehicle)
             .AsNoTracking()
             .FirstOrDefault(x => x.Id == id);
         }

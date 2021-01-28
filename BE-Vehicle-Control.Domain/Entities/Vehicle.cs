@@ -15,7 +15,7 @@ namespace BE_Vehicle_Control.Domain.Entities
         
         public Vehicle(string description, int yearBuild, int yearModel, Guid vehicleModelId)
         {
-            Description = description;
+            Description = description.Trim().ToUpper();
             YearBuild = ValidCurrentYearBuild(yearBuild);
             YearModel = ValidRangeYearCategory(yearModel);
             VehicleModelId = vehicleModelId;
@@ -38,7 +38,7 @@ namespace BE_Vehicle_Control.Domain.Entities
         
         public void UpdateDescription(string description, int yearBuild, int yearModel, Guid vehicleModelId)
         {
-            Description = description;
+            Description = description.Trim().ToUpper();
             YearBuild = ValidCurrentYearBuild(yearBuild);
             YearModel = ValidRangeYearCategory(yearModel);
             VehicleModelId = vehicleModelId;
