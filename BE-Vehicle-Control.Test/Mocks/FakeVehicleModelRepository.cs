@@ -17,6 +17,11 @@ namespace BE_Vehicle_Control.Test.Mocks
             return new VehicleModel("ZZZ", Guid.NewGuid(), Guid.NewGuid());
         }
 
+        public IEnumerable<VehicleModel> GetByBrandType(Guid brandId, Guid vehicleTypeId)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Add(VehicleModel entity)
         {
             

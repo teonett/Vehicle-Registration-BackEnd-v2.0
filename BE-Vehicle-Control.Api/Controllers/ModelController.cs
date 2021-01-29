@@ -29,6 +29,16 @@ namespace BE_Vehicle_Control.Api.Controllers
             return repository.GetById(Id);
         }
 
+        [HttpGet]
+        [Route("{brandId:Guid}, {typeVehicleId:Guid}")]
+        public IEnumerable<VehicleModel> GetByBrandType(
+            Guid brandId, 
+            Guid typeVehicleId,
+            [FromServices] IVehicleModelRepository repository)
+        {
+            return repository.GetByBrandType(brandId, typeVehicleId);
+        }
+
         [Route("")]
         [HttpPost]
         public BaseCommandResult Create(

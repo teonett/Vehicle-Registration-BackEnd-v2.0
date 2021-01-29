@@ -37,6 +37,16 @@ namespace BE_Vehicle_Control.Infra.Repositories
             .FirstOrDefault(x => x.Id == id);
         }
 
+
+        public IEnumerable<VehicleModel> GetByBrandType(Guid brandId, Guid vehicleTypeId)
+        {
+            return _context.VehicleModels
+            .Where(x => x.Brand.Id == brandId && x.TypeVehicle.Id == vehicleTypeId)
+            .Include(x => x.Brand)
+            .Include(x => x.TypeVehicle)
+            .AsNoTracking();
+        }
+
         public void Add(VehicleModel entity)
         {
             _context.VehicleModels.Add(entity);
